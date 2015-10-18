@@ -1,0 +1,32 @@
+file_writer
+===============
+
+RecordFormatter plucks columns from records given a scope, aliased if needed and returns an activerecord relation
+
+Installation
+-----------
+
+Include this line in your Gemfile
+
+    gem "file_writer", github: "tskorupa/file_writer"
+
+Usage
+-----
+
+Use in the following fashion,
+
+
+    irb(main):001:0> require 'file_writer'
+    => true
+    irb(main):002:0> handler = FileWriter.new(destination_dir: "/tmp", filename: "foo.txt")
+    => #<FileWriter:0x007fe5218ba8e0 @destination_dir="/tmp", @filename="foo.txt", @encoding="UTF-8", @tempfile=#<Tempfile:/var/folders/cy/bmr4_rf90jq2v_n4y5b_l59c0000gn/T/foo.txt20151017-59874-16kd4v0>>
+    irb(main):003:0> handler.write "foo bar baz"
+    => 11
+    irb(main):004:0> handler.finalize
+    => #<Tempfile:>
+    irb(main):005:0>
+
+TODO
+================
+
+- test suite
