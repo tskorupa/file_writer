@@ -1,7 +1,7 @@
 file_writer
 ===============
 
-RecordFormatter plucks columns from records given a scope, aliased if needed and returns an activerecord relation
+Write to a tempfile on long jobs and replace the original once completed
 
 Installation
 -----------
@@ -27,6 +27,6 @@ Use in the following fashion,
     irb(main):005:0>
 
 TODO
-================
+-----
 
-- test suite
+* test suite
