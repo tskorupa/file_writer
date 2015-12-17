@@ -2,8 +2,7 @@ require 'fileutils'
 require 'tempfile'
 
 class FileWriter
-
-  DEFAULT_ENCODING = "UTF-8"
+  DEFAULT_ENCODING = 'UTF-8'
 
   def initialize destination_dir:, filename:, encoding: DEFAULT_ENCODING
     @destination_dir = destination_dir
@@ -14,7 +13,7 @@ class FileWriter
   end
 
   def write chunk
-    @tempfile.write encode( chunk )
+    @tempfile.write encode(chunk)
   end
 
   def finalize
@@ -35,7 +34,6 @@ class FileWriter
   end
 
   def create_destination_directory
-    FileUtils.mkdir_p(@destination_dir) unless File.exists? @destination_dir
+    FileUtils.mkdir_p(@destination_dir) unless File.exist?(@destination_dir)
   end
-
 end
